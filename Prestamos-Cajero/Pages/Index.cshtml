@@ -1,0 +1,80 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Calculadora de Cuotas</h1>
+</div>
+
+
+@*Una pagina con un formulario para monto, cantidad de cuotas, y porcentaje
+    de interés anual de un préstamo y calcule la cuota mensual. (Amortizar mediante
+    el sistema francés)*@
+
+<div class="mx-auto mt-4 px-5">
+    
+    <form method="get" class="container border border-primary bg-dark text-light" >
+        <h3 class="text-center my-4">Registre los datos del prestamo aqui</h3>
+
+        <label class=" ml-3 form-label">Monto</label>
+        <input type="number" class="form-control mb-4" name="Monto" />
+
+        <label class=" ml-3 form-label">Procentaje de interes Anual</label>
+        <input type="number" class="form-control mb-4" name="Porcentaje" />
+
+        <label class=" ml-3 form-label">Cuotas</label>
+        <input type="number" class="form-control mb-4" name="Cuotas" />
+
+        <button type="submit" class="btn btn-primary mb-4">Calcular</button>
+
+    </form>
+
+</div>
+
+
+
+<div>
+    <table class="table table-dark table-hover mt-5 text-center border border-danger" >
+        <thead>
+            <tr>
+                <td>No. Cuota</td>
+                <td>Monto Cuota</td>
+                <td>Capital</td>
+                <td>Interes</td>
+                <td>Capital Amortizado</td>
+                <td>Capital Pendiente</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.tabla)
+            {
+            <tr>
+                <td>@item.NoCuota</td>
+                <td>@Math.Round(item.MontoCuota)</td>
+                <td>@Math.Round(item.Capital)</td>
+                <td>@Math.Round(item.Interes)</td>
+                <td>@Math.Round(item.CapAmortizado)</td>
+                <td>@Math.Round(item.CapPendiente)</td>
+
+            </tr>
+            }
+        </tbody>
+
+       <tfoot>
+           <tr>
+               <td colspan="4">
+                   Total intereses
+               </td>
+               <td colspan="2">
+                  @*@Model.totalintereses*@
+
+               </td>
+           </tr>
+       </tfoot>
+        
+    </table>
+
+</div>

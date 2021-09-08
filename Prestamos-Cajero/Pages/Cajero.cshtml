@@ -1,0 +1,50 @@
+﻿@page
+@model Prestamos_Cajero.Pages.CajeroModel
+@{
+}
+
+<div class="text-center">
+    <h2 class="display-4">Cajero Automatico</h2>
+</div>
+
+
+<div class="container mt-4">
+    
+        <form method="get" class="container border border-primary bg-dark text-light">
+            <h3 class="text-center my-4">Inserte sus datos</h3>
+
+            <label class=" ml-3 form-label">Seleccione su banco</label>
+            <select class="form-control mb-4" name="Bancos" >
+                <option value="" class="form-control mb-4">Banco</option>
+            </select>
+
+            <label class=" ml-3 form-label">Monto a Retirar</label>
+            <input type="number" class="form-control mb-4" name="Monto" />
+
+            
+
+            <button type="submit" class="btn btn-primary mb-4">Calcular</button>
+
+        </form>
+    
+</div>
+
+
+<div class="container bg-dark text-white mt-5 p-4">
+    <h4>Monto disponible del cajero</h4>
+    <p>Billetes de 1000: NaN </p>
+    <p>Billetes de 500: NaN </p>
+    <p>Billetes de 100: NaN </p>
+    <p>Total disponible: NaN </p>
+
+
+    <form method="post">
+        <button class="btn btn-success" name="Recargar" value="True">Recargar</button>
+
+    </form>
+
+
+</div>
+
+
+
