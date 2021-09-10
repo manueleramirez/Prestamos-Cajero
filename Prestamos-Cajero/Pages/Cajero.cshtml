@@ -15,7 +15,7 @@
 
             <label class=" ml-3 form-label">Seleccione su banco</label>
             <select class="form-control mb-4" name="Bancos" >
-                <option value="" class="form-control mb-4">Banco</option>
+                <option value="Banco ABC" class="form-control mb-4">Banco</option>
             </select>
 
             <label class=" ml-3 form-label">Monto a Retirar</label>
@@ -23,7 +23,7 @@
 
             
 
-            <button type="submit" class="btn btn-primary mb-4">Calcular</button>
+            <button type="submit" class="btn btn-primary mb-4">Retirar</button>
 
         </form>
     
@@ -32,14 +32,19 @@
 
 <div class="container bg-dark text-white mt-5 p-4">
     <h4>Monto disponible del cajero</h4>
-    <p>Billetes de 1000: NaN </p>
-    <p>Billetes de 500: NaN </p>
-    <p>Billetes de 100: NaN </p>
+    @foreach (var item in Model.DatosCajero)
+    {
+        <p>Billetes de 1000: @item.BilletesMil </p>
+        <p>Billetes de 500: @item.BilletesQuiniento  </p>
+        <p>Billetes de 100: @item.BilletesCien  </p>
+
+    }
+
     <p>Total disponible: NaN </p>
 
 
     <form method="post">
-        <button class="btn btn-success" name="Recargar" value="True">Recargar</button>
+        <button type="submit" class="btn btn-success" name="Recargar" value="True">Recargar</button>
 
     </form>
 

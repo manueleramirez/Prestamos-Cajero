@@ -8,7 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Prestamos.Data;
+
 
 namespace Prestamos_Cajero
 {
@@ -24,6 +25,7 @@ namespace Prestamos_Cajero
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ICajeroRepository, CajeroInMemory>();
             services.AddRazorPages();
         }
 
@@ -45,7 +47,7 @@ namespace Prestamos_Cajero
             app.UseStaticFiles();
 
             app.UseRouting();
-            //app.ApplicationServices(IHttpContextAccessor);
+           
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
