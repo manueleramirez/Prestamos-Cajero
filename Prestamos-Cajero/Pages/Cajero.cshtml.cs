@@ -48,6 +48,7 @@ namespace Prestamos_Cajero.Pages
             const string billetesCien = "99";
             
             _httpContextAccessor.HttpContext.Response.Cookies.Append("billetesMil", billetesMil, options);
+            
 
             //Write("billetesMil", billetesMil, true);
             //Write("billetesQuiniento", billetesQuiniento, true);
