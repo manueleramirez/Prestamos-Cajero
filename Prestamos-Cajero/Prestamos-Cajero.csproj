@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Prestamos.Core\Prestamos.Core.csproj" />
+    <ProjectReference Include="..\Prestamos.Data\Prestamos.Data.csproj" />
+  </ItemGroup>
+
 </Project>

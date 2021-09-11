@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos-Cajero", "Prestamos-Cajero\Prestamos-Cajero.csproj", "{5D3C6005-2591-4613-A0A1-FFE25A202948}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Core", "Prestamos.Core\Prestamos.Core.csproj", "{3A895E13-BF01-44CF-B7DF-E663CAAFBC3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Data", "Prestamos.Data\Prestamos.Data.csproj", "{3B65E873-701D-4976-A64D-74EF8484B6B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5D3C6005-2591-4613-A0A1-FFE25A202948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D3C6005-2591-4613-A0A1-FFE25A202948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D3C6005-2591-4613-A0A1-FFE25A202948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A895E13-BF01-44CF-B7DF-E663CAAFBC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A895E13-BF01-44CF-B7DF-E663CAAFBC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A895E13-BF01-44CF-B7DF-E663CAAFBC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A895E13-BF01-44CF-B7DF-E663CAAFBC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B65E873-701D-4976-A64D-74EF8484B6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B65E873-701D-4976-A64D-74EF8484B6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B65E873-701D-4976-A64D-74EF8484B6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B65E873-701D-4976-A64D-74EF8484B6B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
