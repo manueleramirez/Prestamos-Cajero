@@ -10,6 +10,11 @@ namespace Prestamos.Data
     public interface ICajeroRepository
     {
         public IEnumerable<Cajero> GetAll();
+        public string Retirar(double montoRetiro,string banco);
+        public void recargar();
+        
+        public double Total();
+
 
     }
 }

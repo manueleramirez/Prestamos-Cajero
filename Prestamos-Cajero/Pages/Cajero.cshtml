@@ -14,16 +14,20 @@
             <h3 class="text-center my-4">Inserte sus datos</h3>
 
             <label class=" ml-3 form-label">Seleccione su banco</label>
-            <select class="form-control mb-4" name="Bancos" >
-                <option value="Banco ABC" class="form-control mb-4">Banco</option>
+            <select class="form-control mb-4" name="bancos" >
+                <option value="BancoABC" class="form-control mb-4">Banco ABC</option>
+                <option value="BancoPopular" class="form-control mb-4">Banco Popular</option>
+                <option value="BancoAdemi" class="form-control mb-4">Banco Ademi</option>
+
+
             </select>
 
             <label class=" ml-3 form-label">Monto a Retirar</label>
-            <input type="number" class="form-control mb-4" name="Monto" />
+            <input type="number" class="form-control mb-4" name="monto" />
 
-            
+            <p class="border border-primary border-5">@ViewData["Respuesta"]</p>
 
-            <button type="submit" class="btn btn-primary mb-4">Retirar</button>
+            <button type="submit" class="btn btn-primary mb-4" id="retirar" name="retirar" value="True">Retirar</button>
 
         </form>
     
@@ -40,16 +44,18 @@
 
     }
 
-    <p>Total disponible: NaN </p>
+    <p>Total disponible: RD$@Model.TotalCajero()</p>
+    
 
 
-    <form method="post">
+    <form method="get">
         <button type="submit" class="btn btn-success" name="Recargar" value="True">Recargar</button>
 
     </form>
 
 
 </div>
+
 
 
 
