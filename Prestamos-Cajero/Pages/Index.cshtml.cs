@@ -19,15 +19,6 @@ namespace Prestamos_Cajero.Pages
             _logger = logger;
             this.cajeroRepository = cajeroRepository;
         }
-
-        //Modelo Prestamo
-
-        //[BindProperty]
-        //public decimal Monto { get; set; } = 10000;
-        //[BindProperty]
-        //public decimal Porcentaje { get; set; } = 3;
-        //[BindProperty]
-        //public int Cuotas { get; set; } = 5;
         
 
         public decimal CalcMensualidad(decimal monto,decimal porcentaje,int cuotas) 
@@ -44,25 +35,11 @@ namespace Prestamos_Cajero.Pages
         public decimal CalcInteres(decimal porcentaje, decimal capitalPend ) => ((porcentaje/100) / 12) * capitalPend;
         public decimal CalcCapPendiente(decimal AmortizacionCap, decimal capitalPendAnt) => capitalPendAnt - AmortizacionCap;
         public decimal CalcCapAmortizado(decimal AmortizacionCap, decimal CapAmortizadoAnt) => AmortizacionCap + CapAmortizadoAnt;
-        //public decimal SumarIntereses(decimal Interes, decimal InteresAnt) => Interes + InteresAnt ;
-
-
-
-
-
-
-
-
-
+        
 
 
 
         public List<TablaAmortizacion> tabla = new List<TablaAmortizacion>();
-       
-
-
-
-
 
 
         public void OnGet(decimal Monto,decimal Porcentaje,int Cuotas)

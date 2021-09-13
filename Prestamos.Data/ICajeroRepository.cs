@@ -11,7 +11,7 @@ namespace Prestamos.Data
     {
         public IEnumerable<Cajero> GetAll();
         public string Retirar(double montoRetiro,string banco);
-        public void recargar();
+        public void Recargar();
         
         public double Total();
 

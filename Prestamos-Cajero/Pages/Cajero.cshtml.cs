@@ -59,7 +59,7 @@ namespace Prestamos_Cajero.Pages
 
             if (recargar)
             {
-                cajeroRepository.recargar();
+                cajeroRepository.Recargar();
             }
 
             

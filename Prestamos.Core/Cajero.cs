@@ -12,9 +12,7 @@ namespace Prestamos.Core
         public int BilletesMil { get; set; }
         public int BilletesQuiniento { get; set; }
         public int BilletesCien { get; set; }
-
-
-
+        public int RetiroAcumulado { get; set; }
 
 
     }
