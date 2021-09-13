@@ -21,22 +21,24 @@ namespace Prestamos.Data
         public string Retirar(double montoRetiro, string banco)
         {
 
-            
+
 
             if (montoRetiro <= 2000 && banco == "BancoABC")
             {
                 calcular(montoRetiro);
-                return "Retiro Satisfactorio";
                 Datos[0].RetiroAcumulado = Datos[0].RetiroAcumulado + 1;
-             }
+                return "Retiro Satisfactorio";
+
+
+            }
             else if (montoRetiro > 2000 && banco == "BancoABC")
             {
                 return "El Limite Para su banco es de RD$2000 por transaccion";
             }
-            else if (montoRetiro > 100)
+            else if (montoRetiro >= 100 && banco != "BancoABC" )
             {
                 calcular(montoRetiro);
-                return "El Limite Para su banco es de RD$2000 por transaccion";
+                return "Retiro Satisfactorio";
             }
 
             else
