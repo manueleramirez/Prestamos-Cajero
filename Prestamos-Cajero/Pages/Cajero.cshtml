@@ -14,18 +14,17 @@
             <h3 class="text-center my-4">Inserte sus datos</h3>
 
             <label class=" ml-3 form-label">Seleccione su banco</label>
-            <select class="form-control mb-4" name="bancos" >
+            <select class="form-control mb-4" name="banco" >
                 <option value="BancoABC" class="form-control mb-4">Banco ABC</option>
                 <option value="BancoPopular" class="form-control mb-4">Banco Popular</option>
                 <option value="BancoAdemi" class="form-control mb-4">Banco Ademi</option>
-
 
             </select>
 
             <label class=" ml-3 form-label">Monto a Retirar</label>
             <input type="number" class="form-control mb-4" name="monto" />
 
-            <p class="border border-primary border-5">@ViewData["Respuesta"]</p>
+            <div class="border border-primary border-5 flex-row justify-content-between "><p class="text-white-50">@ViewData["Respuesta"]</p> <span class="btn btn-block">x</span></div>
 
             <button type="submit" class="btn btn-primary mb-4" id="retirar" name="retirar" value="True">Retirar</button>
 

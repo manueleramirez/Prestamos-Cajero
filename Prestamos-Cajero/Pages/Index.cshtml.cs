@@ -31,6 +31,7 @@ namespace Prestamos_Cajero.Pages
             return resultado;
         
         }
+
         public decimal CalcAmortizacionCap(decimal montoCuota, decimal interes) => montoCuota - interes;
         public decimal CalcInteres(decimal porcentaje, decimal capitalPend ) => ((porcentaje/100) / 12) * capitalPend;
         public decimal CalcCapPendiente(decimal AmortizacionCap, decimal capitalPendAnt) => capitalPendAnt - AmortizacionCap;

@@ -21,31 +21,34 @@ namespace Prestamos.Data
         public string Retirar(double montoRetiro, string banco)
         {
 
+            double retiroAcumula = Datos[0].RetiroAcumulado;
 
-
-            if (montoRetiro <= 2000 && banco == "BancoABC")
+            if (retiroAcumula == 10000 && banco == "BancoABC")
             {
-                calcular(montoRetiro);
-                Datos[0].RetiroAcumulado = Datos[0].RetiroAcumulado + 1;
-                return "Retiro Satisfactorio";
-
-
+                return "El Limite Para su banco es de RD$10000 por dia";
             }
+
             else if (montoRetiro > 2000 && banco == "BancoABC")
             {
                 return "El Limite Para su banco es de RD$2000 por transaccion";
             }
+
+            else  if (montoRetiro <= 2000 && banco == "BancoABC")
+            {
+                Calcular(montoRetiro);
+                Datos[0].RetiroAcumulado = Datos[0].RetiroAcumulado + montoRetiro;
+                return "Retiro Satisfactorio";
+            }
+           
             else if (montoRetiro >= 100 && banco != "BancoABC" )
             {
-                calcular(montoRetiro);
+                Calcular(montoRetiro);
                 return "Retiro Satisfactorio";
             }
 
             else
             {
-                
                 return "No se pudo realizar su retiro vuelva a intentar";
-               
             }
             
 
@@ -60,42 +63,34 @@ namespace Prestamos.Data
 
         }
 
-        public void calcular(double montoRetiro) 
+        public void Calcular(double montoRetiro) 
         {
-            //double resultadoRet = 0;
             double residuo = montoRetiro;
             int cantidadMil = 0;
             int cantidadQuinientos = 0;
             int cantidadCien = 0;
 
 
-
             do
             {
-                if (residuo >= 1000 && Total() > montoRetiro && Datos[0].BilletesMil > 0)
+                if (residuo >= 1000 && Total() > montoRetiro && cantidadMil <= Datos[0].BilletesMil-1)
                 {
-                    cantidadMil = cantidadMil + 1;
-                    //resultadoRet = Total()-montoRetiro;
-                    residuo = residuo - 1000;
+                    cantidadMil++;
+                    residuo -= 1000;
                 }
 
 
-                else if (residuo >= 500 && Total() > montoRetiro && Datos[0].BilletesQuiniento > 0)
+                else if (residuo >= 500 && Total() > montoRetiro && cantidadQuinientos <= Datos[0].BilletesQuiniento-1)
                 {
-                    cantidadQuinientos = cantidadQuinientos + 1;
-                    //resultadoRet = Total()-montoRetiro;
-                    residuo = residuo - 500;
+                    cantidadQuinientos++;
+                    residuo -= 500;
                 }
 
-                else if (residuo >= 100 && Total() > montoRetiro && Datos[0].BilletesCien > 0)
+                else if (residuo >= 100 && Total() > montoRetiro && cantidadCien <= Datos[0].BilletesCien-1 )
                 {
-                    cantidadCien = cantidadCien + 1;
-                    //resultadoRet = Total()-montoRetiro;
-                    residuo = residuo - 100;
+                    cantidadCien++;
+                    residuo -= 100;
                 }
-
-
-
 
 
             }
@@ -103,6 +98,7 @@ namespace Prestamos.Data
 
             if (residuo == 0)
             {
+                
                 Datos[0].BilletesMil = Datos[0].BilletesMil - cantidadMil;
                 Datos[0].BilletesQuiniento = Datos[0].BilletesQuiniento - cantidadQuinientos;
                 Datos[0].BilletesCien = Datos[0].BilletesCien - cantidadCien;
@@ -110,12 +106,8 @@ namespace Prestamos.Data
 
         }
 
-
-
-
         public IEnumerable<Cajero> GetAll()
         {
-
             return Datos;
         }
 

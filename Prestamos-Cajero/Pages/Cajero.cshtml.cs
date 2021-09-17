@@ -40,11 +40,6 @@ namespace Prestamos_Cajero.Pages
                 return total;
         }
 
-        // public IActionResult<> Get()
-        // {
-        //     return Html.action(alert("Hola"));
-        // }
-
 
 
         public IActionResult OnGet(string banco, double monto,bool recargar,bool retirar)
