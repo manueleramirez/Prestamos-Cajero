@@ -18,15 +18,14 @@
                 <option value="BancoABC" class="form-control mb-4">Banco ABC</option>
                 <option value="BancoPopular" class="form-control mb-4">Banco Popular</option>
                 <option value="BancoAdemi" class="form-control mb-4">Banco Ademi</option>
-
             </select>
 
             <label class=" ml-3 form-label">Monto a Retirar</label>
             <input type="number" class="form-control mb-4" name="monto" />
 
-            <div class="border border-primary border-5 flex-row justify-content-between "><p class="text-white-50">@ViewData["Respuesta"]</p> <span class="btn btn-block">x</span></div>
+            <div class="border border-primary border-5 @ViewData["cerrar"] flex-row justify-content-between align-content-center d-none text-center "><p class=" m-2 text-center" >@ViewData["Respuesta"]</p> <a asp-page-handler="Cerrar" value="true" cerrar class="btn btn-danger text-white text-center m-2 font-weight-bold">x</a></div>
 
-            <button type="submit" class="btn btn-primary mb-4" id="retirar" name="retirar" value="True">Retirar</button>
+            <button type="submit" class="btn btn-primary m-2" id="retirar" name="retirar" value="True">Retirar</button>
 
         </form>
     

@@ -49,6 +49,7 @@ namespace Prestamos_Cajero.Pages
             if (retirar)
             {
                 @ViewData["Respuesta"] = cajeroRepository.Retirar(monto,banco);
+                ViewData["cerrar"] = "d-flex";
             }
            
 
@@ -60,6 +61,17 @@ namespace Prestamos_Cajero.Pages
             
             return Page();
              
+        }
+
+        public IActionResult Cerrar(bool cerrar) 
+        {
+            if (cerrar) 
+            {
+                ViewData["cerrar"] = "d-none";
+            }
+
+            return Page();
+        
         }
 
         

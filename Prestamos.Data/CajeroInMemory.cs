@@ -23,7 +23,7 @@ namespace Prestamos.Data
 
             double retiroAcumula = Datos[0].RetiroAcumulado;
 
-            if (retiroAcumula == 10000 && banco == "BancoABC")
+            if (retiroAcumula == 10000 && banco == "BancoABC" && Datos[0].RetiroAcumulado > 0)
             {
                 return "El Limite Para su banco es de RD$10000 por dia";
             }
@@ -60,6 +60,9 @@ namespace Prestamos.Data
             Datos[0].BilletesMil = 9; 
             Datos[0].BilletesQuiniento = 19;
             Datos[0].BilletesCien = 99;
+            Datos[0].RetiroAcumulado = 0;
+
+
 
         }
 
